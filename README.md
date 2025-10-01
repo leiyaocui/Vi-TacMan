@@ -111,3 +111,16 @@ If you find our research beneficial, please cite it as follows:
 ```bibtex
 
 ```
+
+## Acknowledgements
+
+This work builds on outstanding open-source contributions. We are grateful to the authors and maintainers of:
+
+- Depth Anything v2
+  - Repo: https://github.com/DepthAnything/Depth-Anything-V2
+- DINOv3
+  - Repo: https://github.com/facebookresearch/dinov3
+- SAM 2: Segment Anything in Images and Videos
+  - Repo: https://github.com/facebookresearch/sam2
+
+All respective assets remain under their original licenses. If you use our code, please also credit and cite these projects accordingly.
