@@ -1,0 +1,43 @@
+defaults:
+  - hydra: default
+  - depth_predictor: default
+  - object_detector: default
+  - mask_segmentor: default
+  - grasp_estimator: default
+  - flow_predictor: default
+  - _self_
+
+verbose: true
+
+seed: 0
+device: "cuda"
+
+log_dir: "./log/example"
+save_dir: "${log_dir}"
+
+data:
+  cam_cfg_file: "./example_data/CameraParam_Color1920x1080_Depth640x576.ini"
+  color_image_file: "./example_data/Color_1920x1080.png"
+  depth_image_file: "./example_data/Depth_640x576.png"
+
+depth_filter:
+  rtol: 0.02
+
+depth_predictor:
+  ckpt_file: "./ckpt/depth_anything_v2/depth_anything_v2_vitl.pth"
+
+object_detector:
+  dinov3_dir: "./thirdparty/dinov3"
+  dinov3_type: dinov3_vitl16_de
+
+  dinov3_ckpt_file: "./ckpt/dinov3_detr/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth"
+  detr_ckpt_file: "./ckpt/dinov3_detr/vitl16_detr.pth"
+
+mask_segmentor:
+  ckpt_file: "./ckpt/sam2/sam2.1_hiera_large.pt"
+  model_cfg_file: "mask_segmentor/sam2.1/sam2.1_hiera_l.yaml" # relative to the directory ./cfg
+
+make_pair_intersection_ratio: 0.8
+
+flow_predictor:
+  ckpt_file: "./ckpt/flow_predictor/flow_predictor.pth"

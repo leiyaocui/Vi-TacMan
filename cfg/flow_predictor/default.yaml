@@ -1,0 +1,8 @@
+num_points: 4096
+in_channel: 4
+
+downsample_size: 8192
+
+num_neighbors: 16
+
+ckpt_file: ""

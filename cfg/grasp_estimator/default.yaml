@@ -1,0 +1,13 @@
+depth: 0.02
+height: 0.06
+finger_width: 0.05
+
+theta_step: 5.0 # degrees
+
+min_width: 0.01
+max_width: 0.1
+width_tol: 0.001
+
+min_approaching_depth: 0.0
+max_approaching_depth: 0.01
+approaching_depth_tol: 0.001

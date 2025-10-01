@@ -1,0 +1,14 @@
+run:
+  dir: "${log_dir}"
+
+job_logging:
+  handlers:
+    file:
+      class: logging.FileHandler
+      filename: "${hydra.run.dir}/${hydra.job.name}.log"
+      mode: w
+      formatter: simple
+
+  root:
+    level: INFO
+    handlers: [file, console]

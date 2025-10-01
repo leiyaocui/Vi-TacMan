@@ -1,0 +1,9 @@
+hydra-core
+opencv-python
+numpy
+scikit-learn
+scipy
+git+https://github.com/EasternJournalist/utils3d.git@c5daf6f6c244d251f252102d09e9b7bcef791a38
+trimesh
+rtree
+geomstats

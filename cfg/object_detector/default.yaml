@@ -1,0 +1,8 @@
+dinov3_dir: "./thirdparty/dinov3"
+dinov3_type: dinov3_vitl16_de
+
+dinov3_ckpt_file: ""
+detr_ckpt_file: ""
+
+score_threshold: 0.1
+nms_threshold: 0.8

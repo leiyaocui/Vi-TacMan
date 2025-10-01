@@ -1,0 +1,89 @@
+diff --git a/dinov3/hub/detectors.py b/dinov3/hub/detectors.py
+index f4861af..b1fcd68 100644
+--- a/dinov3/hub/detectors.py
++++ b/dinov3/hub/detectors.py
+@@ -12,7 +12,7 @@ from dinov3.eval.detection.config import DetectionHeadConfig
+ from dinov3.eval.detection.models.detr import PostProcess, build_model
+ from dinov3.eval.detection.models.position_encoding import PositionEncoding
+ 
+-from .backbones import Weights as BackboneWeights, dinov3_vit7b16, dinov3_vitl16plus, convert_path_or_url_to_url
++from .backbones import Weights as BackboneWeights, dinov3_vit7b16, dinov3_vitl16plus, dinov3_vitl16, convert_path_or_url_to_url
+ from .utils import DINOV3_BASE_URL
+ 
+ 
+@@ -73,15 +73,15 @@ def _make_dinov3_detector(
+         add_transformer_encoder=True,
+         num_encoder_layers=6,
+         backbone_use_layernorm=False,
+-        num_classes=91,  # 91 classes in COCO
++        num_classes=kwargs.get("num_classes", 91),  # 91 classes in COCO
+         aux_loss=True,
+         topk=1500,
+         hidden_dim=768,
+         nheads=8,
+     )
+     config = DetectionHeadConfig(**detection_kwargs)
+-    backbone_class = dict(dinov3_vit7b16=dinov3_vit7b16, dinov3_vitl16plus=dinov3_vitl16plus)[backbone_name]
+-    n_windows_sqrt = dict(dinov3_vit7b16=3, dinov3_vitl16plus=2)[backbone_name]
++    backbone_class = dict(dinov3_vit7b16=dinov3_vit7b16, dinov3_vitl16plus=dinov3_vitl16plus, dinov3_vitl16=dinov3_vitl16)[backbone_name]
++    n_windows_sqrt = dict(dinov3_vit7b16=3, dinov3_vitl16plus=2, dinov3_vitl16=2)[backbone_name]
+     backbone = backbone_class(pretrained=pretrained, weights=backbone_weights, check_hash=check_hash)
+     backbone.eval()
+ 
+@@ -130,3 +130,21 @@ def dinov3_vit7b16_de(
+         check_hash=check_hash,
+         **kwargs,
+     )
++
++
++def dinov3_vitl16_de(
++    *,
++    pretrained: bool = True,
++    weights: DetectionWeights | str = DetectionWeights.COCO2017,
++    backbone_weights: BackboneWeights | str = BackboneWeights.LVD1689M,
++    check_hash: bool = False,
++    **kwargs,
++):
++    return _make_dinov3_detector(
++        backbone_name="dinov3_vitl16",
++        pretrained=pretrained,
++        detector_weights=weights,
++        backbone_weights=backbone_weights,
++        check_hash=check_hash,
++        **kwargs,
++    )
+diff --git a/hubconf.py b/hubconf.py
+index ac08688..5111f75 100644
+--- a/hubconf.py
++++ b/hubconf.py
+@@ -17,7 +17,7 @@ from dinov3.hub.backbones import (
+     dinov3_vits16plus,
+ )
+ from dinov3.hub.classifiers import dinov3_vit7b16_lc
+-from dinov3.hub.detectors import dinov3_vit7b16_de
++from dinov3.hub.detectors import dinov3_vit7b16_de, dinov3_vitl16_de
+ from dinov3.hub.dinotxt import dinov3_vitl16_dinotxt_tet1280d20h24l
+ from dinov3.hub.segmentors import dinov3_vit7b16_ms
+ 
+diff --git a/setup.py b/setup.py
+index 9302c12..a6627ed 100644
+--- a/setup.py
++++ b/setup.py
+@@ -15,7 +15,7 @@ DESCRIPTION = ""
+ 
+ URL = "https://github.com/facebookresearch/dinov3"
+ AUTHOR = "Meta AI"
+-REQUIRES_PYTHON = ">=3.11"
++REQUIRES_PYTHON = ">=3.10"
+ HERE = Path(__file__).parent
+ 
+ 
+@@ -79,7 +79,7 @@ setup(
+         "Intended Audience :: Developers",
+         "Intended Audience :: Science/Research",
+         "License :: Other/Proprietary License",
+-        "Programming Language :: Python :: 3.11",
++        "Programming Language :: Python :: 3.10",
+         "Topic :: Scientific/Engineering :: Artificial Intelligence",
+         "Topic :: Software Development :: Libraries :: Python Modules",
+     ],
