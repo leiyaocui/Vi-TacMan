@@ -5,7 +5,7 @@
   <a href='https://vi-tacman.github.io'><img src='https://img.shields.io/badge/Project_Page-Website-green?logo=googlechrome&logoColor=white' alt='Project Page'></a>
 </div>
 
-This repository provides he official implementation of the paper: [Vi-TacMan: Articulated Object Manipulation via Vision and Touch]().
+This repository provides the official implementation of [Vi-TacMan: Articulated Object Manipulation via Vision and Touch]().
 
 ![B* Framework Overview](figure/teaser_website.png)
 
@@ -24,7 +24,7 @@ This work establishes that coarse visual cues suffice for reliable manipulation 
 1. Clone the repository and set up the environment
 
 ```bash
-git clone --recursive
+git clone https://github.com/leiyaocui/Vi-TacMan.git --recursive
 git -C ./thirdparty/dinov3 apply ./thirdparty/dinov3_patch.diff
 
 conda create -n vitacman python=3.10 -y
