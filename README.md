@@ -3,7 +3,7 @@
 <div align="center">
   <a href="https://arxiv.org/abs/"><img src='https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv&logoColor=white' alt='arXiv'></a>
   <a href='https://vi-tacman.github.io'><img src='https://img.shields.io/badge/Project_Page-Website-green?logo=googlechrome&logoColor=white' alt='Project Page'></a>
-  <a href='https://huggingface.co/spaces/Ruicheng/MoGe-2'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset_(XieNet)-blue'></a>
+  <a href='https://huggingface.co/datasets/Leiyao-Cui/XieNet'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset_(XieNet)-blue'></a>
 </div>
 
 This repository provides the official implementation of [Vi-TacMan: Articulated Object Manipulation via Vision and Touch]().
