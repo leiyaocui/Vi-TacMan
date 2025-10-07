@@ -105,6 +105,33 @@ python main.py \
 - If SAM2 config isn't found, ensure the symlink step from Installation (the `ln -s ... sam2.1` line) was completed.
 - If detection returns nothing, try lowering `object_detector.score_threshold`.
 
+## Dataset
+
+We provide a **repaired** version of the [GAPartNet](https://arxiv.org/abs/2211.05272) dataset, used as our simulation dataset and named [XieNet](https://huggingface.co/datasets/Leiyao-Cui/XieNet).
+
+We identified numerous object meshes in the original dataset that lack proper cap geometry, so we manually repaired these meshes to ensure completeness. The following images (object id: 47296) exemplify the type of geometric defects found and our corrections:
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="figure/gapartnet_47296.png" width="300" alt="GAPartNet Original"/>
+        <br/>
+        GAPartNet (Original)
+      </td>
+      <td align="center">
+        <img src="figure/xienet_47296.png" width="300" alt="XieNet Repaired"/>
+        <br/>
+        XieNet (Repaired)
+      </td>
+    </tr>
+  </table>
+</div>
+
+We also provide the [data generation code](https://huggingface.co/datasets/Leiyao-Cui/XieNet/blob/main/main.py), which can be used to reproduce the simulated data presented in our paper.
+
+We sincerely thank the previous works ([SAPIEN](https://arxiv.org/abs/2003.08515), [PartNet](https://arxiv.org/abs/1812.02713), [GAPartNet](https://arxiv.org/abs/2211.05272)) and hope our repaired dataset can help advance this community.
+
 ## Citation
 
 If you find our research beneficial, please cite it as follows:
