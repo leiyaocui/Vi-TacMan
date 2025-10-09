@@ -1,7 +1,7 @@
 # Vi-TacMan: Articulated Object Manipulation via Vision and Touch
 
 <div align="center">
-  <a href="https://arxiv.org/abs/"><img src='https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv&logoColor=white' alt='arXiv'></a>
+  <a href="https://arxiv.org/abs/2510.06339"><img src='https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv&logoColor=white' alt='arXiv'></a>
   <a href='https://vi-tacman.github.io'><img src='https://img.shields.io/badge/Project_Page-Website-green?logo=googlechrome&logoColor=white' alt='Project Page'></a>
   <a href='https://huggingface.co/datasets/Leiyao-Cui/XieNet'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset_(XieNet)-blue'></a>
 </div>
@@ -137,7 +137,12 @@ We sincerely thank the previous works ([SAPIEN](https://arxiv.org/abs/2003.08515
 If you find our research beneficial, please cite it as follows:
 
 ```bibtex
-
+@article{cui2025vitacman,
+    title={Vi-{T}ac{M}an: Articulated Object Manipulation via Vision and Touch},
+    author={Cui, Leiyao and Zhao, Zihang and Xie, Sirui and Zhang, Wenhuan and Han, Zhi and Zhu, Yixin},
+    journal={arXiv preprint arXiv:2510.06339},
+    year={2025}
+}
 ```
 
 ## Acknowledgements
