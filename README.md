@@ -16,7 +16,7 @@ Autonomous manipulation of articulated objects remains a fundamental challenge f
 Vision-based methods can infer hidden kinematics but yield imprecise estimates on unfamiliar objects. Tactile approaches achieve robust control through contact feedback but require accurate initialization. This suggests a natural synergy: vision for global guidance, touch for local precision.
 Yet no framework systematically exploits this complementarity for generalized articulated manipulation.
 Here we present Vi-TacMan, which uses vision to propose grasps and coarse directions that seed a tactile controller for precise execution.
-By incorporating surface normals as geometric priors and modeling directions via von Mises-Fisher distributions, our approach achieves significant gains over baselines (all $\boldsymbol{p}<0.0001$). Critically, manipulation succeeds without explicit kinematic models——the tactile controller refines coarse visual estimates through real-time contact regulation.
+By incorporating surface normals as geometric priors and modeling directions via von Mises-Fisher distributions, our approach achieves significant gains over baselines (all $\boldsymbol{p}<0.0001$). Critically, manipulation succeeds without explicit kinematic models—the tactile controller refines coarse visual estimates through real-time contact regulation.
 Tests on 50,000+ simulated and diverse real-world objects confirm robust cross-category generalization.
 This work establishes that coarse visual cues suffice for reliable manipulation when coupled with tactile feedback, offering a scalable paradigm for autonomous systems in unstructured environments.
 
