@@ -59,10 +59,10 @@ class DepthPredictor:
 
         outputs = self.model.forward(inputs)
 
-        disparity_image_predcited = outputs
-        disparity_image_predcited = (
+        disparity_image_predicted = outputs
+        disparity_image_predicted = (
             F.interpolate(
-                disparity_image_predcited.unsqueeze(1),
+                disparity_image_predicted.unsqueeze(1),
                 (color_image.shape[0], color_image.shape[1]),
                 mode="bilinear",
                 align_corners=True,
@@ -71,8 +71,8 @@ class DepthPredictor:
             .numpy()
         )
 
-        disparity_image_predcited_remapped, valid_mask = camera.remap_color_to_depth(
-            disparity_image_predcited, depth_image, interpolation=cv2.INTER_NEAREST
+        disparity_image_predicted_remapped, valid_mask = camera.remap_color_to_depth(
+            disparity_image_predicted, depth_image, interpolation=cv2.INTER_NEAREST
         )
 
         with np.errstate(divide="ignore"):
@@ -88,20 +88,20 @@ class DepthPredictor:
 
         ransac_regressor = RANSACRegressor(random_state=0)
         ransac_regressor.fit(
-            disparity_image_predcited_remapped[valid_mask].reshape(-1, 1),
+            disparity_image_predicted_remapped[valid_mask].reshape(-1, 1),
             disparity_image[valid_mask].reshape(-1, 1),
         )
 
-        disparity_image_predcited = ransac_regressor.predict(
-            disparity_image_predcited.reshape(-1, 1)
+        disparity_image_predicted = ransac_regressor.predict(
+            disparity_image_predicted.reshape(-1, 1)
         ).reshape(color_image.shape[0], color_image.shape[1])
 
-        depth_image_predicted = 1.0 / disparity_image_predcited
+        depth_image_predicted = 1.0 / disparity_image_predicted
         depth_image_predicted = np.nan_to_num(
             depth_image_predicted, nan=0.0, posinf=0.0, neginf=0.0
         )
 
-        valid_mask = disparity_image_predcited > 0
+        valid_mask = disparity_image_predicted > 0
 
         depth_image_predicted[~valid_mask] = 0
 
