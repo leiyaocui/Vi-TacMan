@@ -43,13 +43,13 @@ ln -s $(realpath ./thirdparty/sam2/sam2/configs/sam2.1) ./cfg/mask_segmentor/sam
 2. Download model weights
 
 ```bash
-wget https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth ./ckpt/depth_anything_v2
+wget -P ./ckpt/depth_anything_v2 https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth
 
-wget https://huggingface.co/Leiyao-Cui/Vi-TacMan/resolve/main/vitl16_detr.pth ./ckpt/dinov3_detr
+wget -P ./ckpt/dinov3_detr https://huggingface.co/Leiyao-Cui/Vi-TacMan/resolve/main/vitl16_detr.pth
 
-wget https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt ./ckpt/sam2
+wget -P ./ckpt/sam2 https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt
 
-wget https://huggingface.co/Leiyao-Cui/Vi-TacMan/resolve/main/flow_predictor.pth ./ckpt/flow_predictor
+wget -P ./ckpt/flow_predictor https://huggingface.co/Leiyao-Cui/Vi-TacMan/resolve/main/flow_predictor.pth
 ```
 
 You need to download the dinov3 model weights `dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth` from [dinov3_repo](https://github.com/facebookresearch/dinov3), and put it under `./ckpt/dinov3_detr` directory.
