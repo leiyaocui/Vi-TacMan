@@ -6,6 +6,23 @@
   <a href='https://huggingface.co/datasets/Leiyao-Cui/XieNet'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset_(XieNet)-blue'></a>
 </div>
 
+<h4 align="center">Accepted by IEEE International Conference on Robotics and Automation (ICRA) 2026</h4>
+
+<p align="center">
+  <a href="https://lycui.com/" target="_blank">Leiyao Cui</a><sup>⚖️</sup>,
+  <a href="https://zihangzhao.com/" target="_blank">Zihang Zhao</a><sup>⚖️✉️</sup>,
+  <a href="https://siruixie.github.io/" target="_blank">Sirui Xie</a><sup>⚖️</sup>,
+  Wenhuan Zhang<sup>⚖️</sup>,
+  Zhi Han,
+  <a href="https://yzhu.io/" target="_blank">Yixin Zhu</a><sup>✉️</sup>
+</p>
+
+<p align="center">
+  ⚖️: Equal contributor, ✉️: Corresponding author
+</p>
+
+---
+
 This repository provides the official implementation of [Vi-TacMan: Articulated Object Manipulation via Vision and Touch]().
 
 ![B* Framework Overview](figure/teaser_website.png)
@@ -137,11 +154,12 @@ We sincerely thank the previous works ([SAPIEN](https://arxiv.org/abs/2003.08515
 If you find our research beneficial, please cite it as follows:
 
 ```bibtex
-@article{cui2025vitacman,
-    title={Vi-{T}ac{M}an: Articulated Object Manipulation via Vision and Touch},
-    author={Cui, Leiyao and Zhao, Zihang and Xie, Sirui and Zhang, Wenhuan and Han, Zhi and Zhu, Yixin},
-    journal={arXiv preprint arXiv:2510.06339},
-    year={2025}
+@inproceedings{cui2026vitacman,
+  title = {Vi-{T}ac{M}an: Articulated Object Manipulation via Vision and Touch},
+  author = {Cui, Leiyao and Zhao, Zihang and Xie, Sirui and Zhang, Wenhuan and Han, Zhi and Zhu, Yixin},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  year = {2026},
+  organization = {IEEE}    
 }
 ```
 
