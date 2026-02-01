@@ -1,4 +1,4 @@
-<h1 align="center">Vi-TacMan: Articulated Object Manipulation via Vision and Touch</h1>
+<h1 align="center">Vi-TacMan: Articulated Object Manipulation via<br>Vision and Touch</h1>
 
 <div align="center">
   <a href="https://arxiv.org/abs/2510.06339"><img src='https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv&logoColor=white' alt='arXiv'></a>
