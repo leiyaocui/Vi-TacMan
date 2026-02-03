@@ -236,6 +236,7 @@ class Camera:
             & (u_int < self.color_image_size[0])
             & (v_int >= 0)
             & (v_int < self.color_image_size[1])
+            & (points_color[..., 2] > 0)
         )
 
         color_image_remapped = cv2.remap(
