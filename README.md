@@ -13,7 +13,7 @@
   <a href="https://zihangzhao.com/" target="_blank">Zihang Zhao</a><sup>⚖️✉️</sup>,
   <a href="https://siruixie.github.io/" target="_blank">Sirui Xie</a><sup>⚖️</sup>,
   Wenhuan Zhang<sup>⚖️</sup>,
-  Zhi Han,
+  Zhi Han<sup>✉️</sup>,
   <a href="https://yzhu.io/" target="_blank">Yixin Zhu</a><sup>✉️</sup>
 </p>
 
